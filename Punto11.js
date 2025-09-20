@@ -10,7 +10,6 @@ let productos = [
     {id:9,name:"Producto 9"},
 ]
 
-
 const getProducto = (id) => {
     return new Promise((result,error)=> {
         setTimeout(() => {
@@ -23,12 +22,18 @@ const getProducto = (id) => {
     })
 }
 
-let printProduct = (product) => {
-    console.log("El produto es: ",product)
+
+async function getProduct(id){
+    try{
+        let result = await  getProducto(id)
+        console.log("El producto es: ",result)
+    }catch(error){
+        console.error(error)
+    }
 }
 
-var result = getProducto(3).then(result => printProduct(result))
-                            .catch(error => console.error(error))
+getProduct(3)
+getProduct(10)
 
-var noREsult = getProducto(10).then(result => printProduct(result))
-                              .catch(error => console.error(error))
+
+
