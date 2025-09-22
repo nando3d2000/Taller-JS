@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let objeto = {
+            id: 1,
+            nombre: "Objeto 1",
+            descripcion: "Descripcion Objeto 1",
+            roles: ["Docente", "Administrador"]
+        }
+
+        localStorage.setItem("primerObjeto", JSON.stringify(objeto))
+
+        const copia = JSON.parse(localStorage.getItem("primerObjeto")) 
+
+        console.log("El objeto recuperado es: ",copia)
+    </script>
+
+</body>
+</html>
